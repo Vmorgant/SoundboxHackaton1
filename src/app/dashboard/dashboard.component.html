@@ -2,12 +2,9 @@
   <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile *ngFor="let sound of sounds | async" [colspan]="sound.cols" [rowspan]="sound.rows">
       <mat-card class="dashboard-card" (click)="playSound(sound.url)">
-        <mat-card-header>
-          <mat-card-title>
-            {{sound.name}}
-          </mat-card-title>
-        </mat-card-header>
         <mat-card-content class="dashboard-card-content">
+          
+            <img mat-card-image src={{sound.img}} alt= {{sound.name}}/>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
