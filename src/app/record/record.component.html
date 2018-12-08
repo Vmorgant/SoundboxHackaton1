@@ -1,3 +1,6 @@
-<p>
-  <button (click)="recordStart()">{{recordMessage}}</button>
-</p>
+<a (click)="initiateRecording()" class="btn btn-primary" *ngIf="!recording"> Commencer enregistrement </a>
+<a (click)="stopRecording()" class="btn btn-danger" *ngIf="recording"> Terminer enregistrement </a>
+<div class="clearfix"></div>
+<audio controls="" *ngIf="url">
+    <source [src]="sanitize(url)" type="audio/wav">
+</audio>
